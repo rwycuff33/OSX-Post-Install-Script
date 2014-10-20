@@ -1,5 +1,4 @@
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-sudo curl -L http://install.ohmyz.sh | sh
+## SET REASONABLE OSX DEFAULTS
 sudo defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 sudo defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write com.apple.screensaver askForPassword -int 1
@@ -29,19 +28,45 @@ defaults write com.apple.iTunes AutomaticDeviceBackupsDisabled -bool true
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 defaults write com.apple.Safari HomePage -string "about:blank"
 defaults write com.apple.dashboard mcx-disabled -boolean YES
+## UNHIDE YOUR USER LIBRARY
 chflags nohidden ~/Library
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+## TURN OFF ANIMATIONS
 defaults write com.apple.finder DisableAllAnimations -bool true
+
+## SET REASONABLE SCREEN CAPTURE DEFAULTS
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+
+## RESTART SYSTEM WHEN FROZEN/HUNG
 sudo systemsetup -setrestartfreeze on
+
+## TURN OFF FAST USER SWITCHING
 sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool false
+
+## TURN OFF AMBIENT DISPLAY SENSOR
 sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
-brew install caskroom/cask/brew-cask
-brew cask install adium bee backblaze colloquy disk-inventory-x moom boot2docker vagrant google-nik-collection lastpass-universal lastfm caffeine boot2docker vagrant
-for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "Terminal" "iCal" "iTunes"; do killall "$app" > /dev/null 2>&1 done
+
+## INSTALL HOMEBREW AND COMMANDLINE TOOLS MISSING IN OSX
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install wget
+
+## INSTALL OH MY ZSH AND SET ZSH AS DEFAULT SHELL
+sudo curl -L http://install.ohmyz.sh | sh
+
+## INSTALL CASKROOM AND ALL APPLICATIONS
+## Set "wacom-tablet" to "wacom-bamboo-tablet" for bamboo users
+## TODO: MAKE GROUPS OF APPS?
+brew install caskroom/cask/brew-cask
+brew cask install adium bee backblaze colloquy disk-inventory-x moom boot2docker vagrant google-nik-collection lastpass-universal lastfm caffeine boot2docker vagrant wacom-tablet
+
+## INSTALL AWS CLI
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 sudo pip install awscli
+sleep 30
+echo About to close many apps - shutdown the following, or have them cycled for you: 
+echo Address Book, Calendar, Contacts, Dashboard, Dock, Finder, Mail, Safari, SystemUIServer, Terminal, iCal, iTunes
+## CLOSE ALL APPS THAT NEED TO BE REFRESHED FOR SETTINGS TO TAKE
+for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "Terminal" "iCal" "iTunes"; do killall "$app" > /dev/null 2>&1 done
