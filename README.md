@@ -5,14 +5,14 @@ The install.sh script will install the following:
 
  - Moom - 
  - TextMate - http://macromates.com/download
- - Adobe Creative Suite - http://www.adobe.com/appsmanager/
+ - Adobe Creative Cloud - http://www.adobe.com/appsmanager/
  - Alfred - http://www.alfredapp.com, https://itunes.apple.com/ca/app/alfred/id405843582?mt=12
  - iStat Menus - http://bjango.com/mac/istatmenus/
  - LastPass - 
- - LogMeIn - 
+ - LogMeIn Client - 
  - Wacom Drivers
  - Kindle - https://itunes.apple.com/ca/app/kindle/id405399194?mt=12
- - Pomodoro - I've been using http://tomato.es/, though there's a great Pomodoro timer in the app store: https://itunes.apple.com/ca/app/pomodoro-timer-focus-on-your/id872515009?mt=12
+ 
  - Slack - https://stemcell.slack.com/apps
  - Adobe Flash 
  - Microsoft SilverLight
@@ -23,23 +23,29 @@ The install.sh script will install the following:
  - Backblaze - 
  - Balsamiq Mockups - http://balsamiq.com/download/
  - BeyondCompare - http://www.scootersoftware.com/download.php
- - Capture One - 
  - Carbon Copy Cloner - https://bombich.com/download
  - RoyalTS - http://www.royalts.com/main/home/osx.aspx
- - GitHub 
+ - GitHub - 
  - Google AppEngine Launcher
  - iTerm (with solarize theme)
  - JDownloader - http://jdownloader.org:8080/download/index
- - Amazon Workspaces Client - https://clients.amazonworkspaces.com/
  - Spotify - https://www.spotify.com/ca-en/download/mac/
  - Atom - https://atom.io/download/mac
  - Sublime Text - http://www.sublimetext.com/2
  - Feedly - https://itunes.apple.com/ca/app/feedly.-read-more-know-more./id865500966?mt=12
  - Bee - https://itunes.apple.com/ca/app/bee-issue-tracking-made-native/id726099620?mt=12
+ - KeePassX - 
+ - The Unarchiver - 
+ - Toad - 
+ - UNetBootin - 
+ - RescueTime - 
+ - VMware Fusion - 
+ - Oracle VirtualBox - 
+
  
 Commandline Apps
 ================
- - Apple Jack - http://sourceforge.net/projects/applejack/
+
  - AWS CLI - http://aws.amazon.com/cli/
  - Docker - https://docs.docker.com/installation/mac/
  - Vagrant - https://www.vagrantup.com/downloads.html 
@@ -70,15 +76,16 @@ Settings Changed
  - Removed Facetime.app from dock
  - Removed iBooks from dock
  - Background generated here: http://matthew.wagerfield.com/flat-surface-shader/
- - Toad - 
- - VMware Fusion - 
+
+
  - Corel Painter 2015 - 
  - XCode - 
- - UNetBootin - 
- - RescueTime
+ - Capture One - 
  - VSCO presets - 
- - KeePassX - 
  - Adblock Plus - 
  - Pages - 
- - The Unarchiver - 
+ - Amazon Workspaces Client - https://clients.amazonworkspaces.com/
+ - Apple Jack - http://sourceforge.net/projects/applejack/
+
  - Navicat Essentials for PostgreSQL - 
+ - Pomodoro - I've been using http://tomato.es/, though there's a great Pomodoro timer in the app store: https://itunes.apple.com/ca/app/pomodoro-timer-focus-on-your/id872515009?mt=12

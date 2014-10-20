@@ -15,15 +15,15 @@ defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 defaults write com.apple.terminal StringEncodings -array 4
-defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
-defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
-defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
+defaults write com.apple.Terminal "Default Window Settings" -string "Homebrew"
+defaults write com.apple.Terminal "Default Window Settings" -string "Homebrew"
+defaults write com.apple.Terminal "Startup Window Settings" -string "Homebrew"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 sudo pmset -a sms 0
 sudo pmset -a standbydelay 86400
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write NSGlobalDomain KeyRepeat -int 0
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
 defaults write com.apple.iTunes AutomaticDeviceBackupsDisabled -bool true
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 defaults write com.apple.Safari HomePage -string "about:blank"
@@ -59,7 +59,13 @@ sudo curl -L http://install.ohmyz.sh | sh
 ## Set "wacom-tablet" to "wacom-bamboo-tablet" for bamboo users
 ## TODO: MAKE GROUPS OF APPS?
 brew install caskroom/cask/brew-cask
-brew cask install adium bee backblaze colloquy disk-inventory-x moom boot2docker vagrant google-nik-collection lastpass-universal lastfm caffeine boot2docker vagrant wacom-tablet
+brew cask install adium bee backblaze colloquy disk-inventory-x moom boot2docker vagrant google-nik-collection lastpass-universal lastfm caffeine boot2docker vagrant wacom-tablet iterm2 sourcetree keepassx github royal-tsx jdownloader rescuetime the-unarchiver toad unetbootin chefdk vmware-fusion carbon-copy-cloner virtualbox silverlight flash-player logmein-client istat-menus adobe-creative-cloud slack alfred navicat-for-postgresql  
+
+## SPOTIFY
+brew cask install spotify spotify-menubar spotify-notifications
+
+## CONFIGURE ITERM TO NOT PROMPT ON QUIT
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ## INSTALL AWS CLI
 wget https://bootstrap.pypa.io/get-pip.py
