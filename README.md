@@ -108,3 +108,10 @@ Settings Changed
 
  - Navicat Essentials for PostgreSQL - 
  - Pomodoro - I've been using http://tomato.es/, though there's a great Pomodoro timer in the app store: https://itunes.apple.com/ca/app/pomodoro-timer-focus-on-your/id872515009?mt=12
+
+CREDITS
+=======
+
+Many (if not all) of the OSX hacks have been taken from this Gist: https://gist.github.com/brandonb927/3195465.
+Much of the app install work is being handled by Hombrew Cask: https://github.com/caskroom/homebrew-cask
+The idea for the script itself could be blamed on this book from Tom Limoncelli: http://www.amazon.com/Practice-Cloud-System-Administration-Distributed/dp/032194318X/ref=la_B004J0QIVM_1_1?s=books&ie=UTF8&qid=1413847751&sr=1-1
