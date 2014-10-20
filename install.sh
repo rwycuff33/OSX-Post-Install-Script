@@ -1,9 +1,5 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 sudo curl -L http://install.ohmyz.sh | sh
-brew install wget
-wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
-sudo pip install awscli
 sudo defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 sudo defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write com.apple.screensaver askForPassword -int 1
@@ -43,17 +39,9 @@ sudo systemsetup -setrestartfreeze on
 sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool false
 sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
 brew install caskroom/cask/brew-cask
-brew cask install adium
-brew cask install bee
-brew cask install bee
-brew cask install adium
-brew cask install backblaze
-brew cask install caffeine
-brew cask install colloquy
-brew cask install disk-inventory-x
-brew cask install lastfm
-brew cask install lastpass-universal
-brew cask install google-nik-collection
-brew cask install moom
-
+brew cask install adium bee backblaze colloquy disk-inventory-x moom boot2docker vagrant google-nik-collection lastpass-universal lastfm caffeine boot2docker vagrant
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "Terminal" "iCal" "iTunes"; do killall "$app" > /dev/null 2>&1 done
+brew install wget
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+sudo pip install awscli
