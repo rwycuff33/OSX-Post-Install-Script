@@ -1,6 +1,25 @@
 OSX Settings, Applications and Configurations 
 =============================================
 
+This has been edited for Apple Macintosh OSX Yosemite. 
+
+WARNING - PLEASE READ THE SCRIPT CAREFULLY BEFORE RUNNING
+I have selected reasonable defaults, but you'll want to 
+change things like browsers, editors, system tools to your
+needs. 
+I have also disabled a few operating system settings that 
+I find unnecessary like smart-quotes, special character 
+sticky keys and drop-sensors as I use SSDs. 
+For the most part, these are commented out in order to 
+make the script more safe to use.
+
+I have also added a bunch of DevOps tools and graphics
+applications that I use personaly which might not be of
+any use to use, but have grouped them into sections to 
+make things a bit easier to handle. Simply comment out the
+entire line to not install these.
+
+
 The install.sh script will install the following:
 
  - Moom - 
