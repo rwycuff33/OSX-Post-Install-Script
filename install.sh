@@ -54,4 +54,6 @@ brew cask install disk-inventory-x
 brew cask install lastfm
 brew cask install lastpass-universal
 brew cask install google-nik-collection
+brew cask install moom
+
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "Terminal" "iCal" "iTunes"; do killall "$app" > /dev/null 2>&1 done
