@@ -1,3 +1,9 @@
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+sudo curl -L http://install.ohmyz.sh | sh
+brew install wget
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+sudo pip install awscli
 sudo defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 sudo defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write com.apple.screensaver askForPassword -int 1
