@@ -32,7 +32,6 @@ The install.sh script will install the following:
  - Spotify - https://www.spotify.com/ca-en/download/mac/
  - Atom - https://atom.io/download/mac
  - Sublime Text - http://www.sublimetext.com/2
- - Feedly - https://itunes.apple.com/ca/app/feedly.-read-more-know-more./id865500966?mt=12
  - Bee - https://itunes.apple.com/ca/app/bee-issue-tracking-made-native/id726099620?mt=12
  - KeePassX - 
  - The Unarchiver - 
@@ -41,8 +40,8 @@ The install.sh script will install the following:
  - RescueTime - 
  - VMware Fusion - 
  - Oracle VirtualBox - 
-
- 
+ - Navicat Essentials for PostgreSQL - 
+  
 Commandline Apps
 ================
 
@@ -56,28 +55,30 @@ Commandline Apps
  - Chef DK - https://downloads.getchef.com/chef-dk/mac/
  - wget - brew install wget
  - caskroom - http://caskroom.io (the real magic here)
- 
- 
+  
 Settings Changed
 ================
- - Natural Mouse Scroll
- - Right click on trackpad
  - Keyboard Repeat Rate High
  - Animations turned off
  - Turned off fast user switching
- - Turned off clock in menubar (use iStat)
+
  - Set default shell to zsh
 
- WORK ON THESE (NOT AUTOMATIC)
- =============================
+WORK ON THESE (NOT AUTOMATIC)
+=============================
+
+Tweaks
+ - Natural Mouse Scroll
+ - Right click on trackpad
  - Removed Mail.app from dock
  - Removed Maps.app from dock
  - Removed iTunes from dock
  - Removed Facetime.app from dock
  - Removed iBooks from dock
+ - Turned off clock in menubar (use iStat)
  - Background generated here: http://matthew.wagerfield.com/flat-surface-shader/
 
-
+Applications:
  - Corel Painter 2015 - 
  - XCode - 
  - Capture One - 
@@ -86,6 +87,5 @@ Settings Changed
  - Pages - 
  - Amazon Workspaces Client - https://clients.amazonworkspaces.com/
  - Apple Jack - http://sourceforge.net/projects/applejack/
-
- - Navicat Essentials for PostgreSQL - 
+ - Feedly - https://itunes.apple.com/ca/app/feedly.-read-more-know-more./id865500966?mt=12
  - Pomodoro - I've been using http://tomato.es/, though there's a great Pomodoro timer in the app store: https://itunes.apple.com/ca/app/pomodoro-timer-focus-on-your/id872515009?mt=12

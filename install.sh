@@ -5,8 +5,138 @@ sudo defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-## SHOW ALL RESOLUTIONS
+## AUTOMATICALLY QUIT PRINTER APP ONCE THE PRINT JOBS COMPLETE
+defaults write com.apple.print.PrintingPrefs “Quit When Finished” -bool true
+
+## DISABLE THE “ARE YOU SURE YOU WANT TO OPEN THIS APPLICATION?” DIALOG
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+## TRACKPAD: MAP BOTTOM RIGHT CORNER TO RIGHT-CLICK
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+
+## DISABLE NATURAL SCROLLING
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+## ENABLE TAB IN MODAL DIALOGS
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+## SCROLL WITH CTRL TO ZOOM
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
+## DISABLE AUTO-CORRECT
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+## ENABLE HIDPI DISPLAY MODES (REQUIRES RESTART)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
+##FINDER: SHOW HIDDEN FILES BY DEFAULT
+#defaults write com.apple.finder AppleShowAllFiles -bool true
+
+##FINDER: SHOW ALL FILENAME EXTENSIONS
+#defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+##FINDER: SHOW STATUS BAR
+#defaults write com.apple.finder ShowStatusBar -bool true
+
+##FINDER: ALLOW TEXT SELECTION IN QUICK LOOK
+#defaults write com.apple.finder QLEnableTextSelection -bool true
+
+##DISPLAY FULL POSIX PATH AS FINDER WINDOW TITLE
+#defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+##DISABLE THE WARNING WHEN CHANGING A FILE EXTENSION
+#defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+##AVOID CREATING .DS_STORE FILES ON NETWORK VOLUMES
+#defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+##AUTOMATICALLY OPEN A NEW FINDER WINDOW WHEN A VOLUME IS MOUNTED
+# defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+# defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+# defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+
+##USE LIST VIEW IN ALL FINDER WINDOWS BY DEFAULT
+##YOU CAN SET THE OTHER VIEW MODES BY USING ONE OF THESE FOUR-LETTER CODES: ICNV, CLMV, FLWV
+defaults write com.apple.finder FXPreferredViewStyle -string “Nlsv”
+
+##DISABLE THE WARNING BEFORE EMPTYING THE TRASH
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# EMPTY TRASH SECURELY BY DEFAULT
+# defaults write com.apple.finder EmptyTrashSecurely -bool true
+# ENABLE AIRDROP OVER ETHERNET AND ON UNSUPPORTED MACS
+# defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+# ENABLE HIGHLIGHT HOVER EFFECT FOR THE GRID VIEW OF A STACK (DOCK)
+# defaults write com.apple.dock mouse-over-hilte-stack -bool true
+
+# SET THE ICON SIZE OF DOCK ITEMS TO 36 PIXELS
+# defaults write com.apple.dock tilesize -int 36
+
+# ENABLE SPRING LOADING FOR ALL DOCK ITEMS
+# defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
+
+# SHOW INDICATOR LIGHTS FOR OPEN APPLICATIONS IN THE DOCK
+# defaults write com.apple.dock show-process-indicators -bool true
+
+# DON’T ANIMATE OPENING APPLICATIONS FROM THE DOCK
+# defaults write com.apple.dock launchanim -bool false
+
+# SPEED UP MISSION CONTROL ANIMATIONS
+# defaults write com.apple.dock expose-animation-duration -float 0.1
+
+# DON’T GROUP WINDOWS BY APPLICATION IN MISSION CONTROL (I.E. USE THE OLD EXPOSÉ BEHAVIOR INSTEAD)
+# defaults write com.apple.dock expose-group-by-app -bool false
+
+# DON’T SHOW DASHBOARD AS A SPACE
+# defaults write com.apple.dock dashboard-in-overlay -bool true
+
+# REMOVE THE AUTO-HIDING DOCK DELAY
+# defaults write com.apple.Dock autohide-delay -float 0
+
+# REMOVE THE ANIMATION WHEN HIDING/SHOWING THE DOCK
+# defaults write com.apple.dock autohide-time-modifier -float 0
+
+# ENABLE THE 2D DOCK
+# defaults write com.apple.dock no-glass -bool true
+
+# AUTOMATICALLY HIDE AND SHOW THE DOCK
+# defaults write com.apple.dock autohide -bool true
+
+# MAKE DOCK ICONS OF HIDDEN APPLICATIONS TRANSLUCENT
+# defaults write com.apple.dock showhidden -bool true
+
+# RESET LAUNCHPAD
+# find ~/Library/Application Support/Dock -name “*.db” -maxdepth 1 -delete
+
+# ADD IOS SIMULATOR TO LAUNCHPAD
+# ln -s /Applications/Xcode.app/Contents/Applications/iPhone Simulator.app /Applications/iOS Simulator.app
+
+# ADD A SPACER TO THE LEFT SIDE OF THE DOCK (WHERE THE APPLICATIONS ARE)
+# defaults write com.apple.dock persistent-apps -array-add ‘{tile-data={}; tile-type=“spacer-tile”;}’
+
+# ADD A SPACER TO THE RIGHT SIDE OF THE DOCK (WHERE THE TRASH IS)
+# defaults write com.apple.dock persistent-others -array-add ‘{tile-data={}; tile-type=“spacer-tile”;}’
+
+## HOT CORNERS
+## TOP LEFT SCREEN CORNER → MISSION CONTROL
+#defaults write com.apple.dock wvous-tl-corner -int 2
+#defaults write com.apple.dock wvous-tl-modifier -int 0
+## TOP RIGHT SCREEN CORNER → DESKTOP
+#defaults write com.apple.dock wvous-tr-corner -int 4
+#defaults write com.apple.dock wvous-tr-modifier -int 0
+## BOTTOM LEFT SCREEN CORNER → START SCREEN SAVER
+#defaults write com.apple.dock wvous-bl-corner -int 5
+#defaults write com.apple.dock wvous-bl-modifier -int 0
+
+## SHOW ICONS FOR HARD DRIVES, SERVERS, AND REMOVABLE MEDIA ON THE DESKTOP
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 ## TURN OFF DISK IMAGE VERIFICATION - POSSIBLE SECURITY PROBLEM - UNCOMMENT IF YOU WANT THIS
 #defaults write com.apple.frameworks.diskimages skip-verify -bool true
@@ -20,11 +150,15 @@ defaults write com.apple.dock "expose-group-by-app" -bool true
 
 ## TURN OF MATCHES ON PREFIX-ONLY IN SAFARI
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+
 ## REMOVE UN-NEEDED LINKS IN SAFARI
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 ## TURN ON BACKSPACE KEY TO GO BACK - COMMENTED OUT WITH PEOPLE WHO HATE THIS
 #defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
+
+##DISABLE SAFARI’S THUMBNAIL CACHE FOR HISTORY AND TOP SITES
+defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 ## SET TERMINAL TO HOMEBREW THEME, OPTIONS ARE "Pro", "Homebrew", "Man Page", "Novel", "Ocean", "Red Sands", "Silver Aerogel", "Solid Colors"
 defaults write com.apple.terminal StringEncodings -array 4
@@ -44,7 +178,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ## SET SUPER FAST KEY REPEAT
 defaults write NSGlobalDomain KeyRepeat -int 0
 
-## TURN OFF ITUNES DEVICE BACKUP
+## TURN OFF ITUNES DEVICE BACKUP - USE ICLOUD BACKUPS INSTEAD
 defaults write com.apple.iTunes AutomaticDeviceBackupsDisabled -bool true
 
 ## TURN OFF SIDEBAR ON SAFARI TOPSITES
@@ -58,6 +192,8 @@ defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 ## UNHIDE YOUR USER LIBRARY
 chflags nohidden ~/Library
+
+## SET DEFAULT SEARCH TO CURRENT FOLDER
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 ## TURN OFF ANIMATIONS
@@ -81,6 +217,7 @@ sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabl
 sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
 
 ## INSTALL HOMEBREW AND COMMANDLINE TOOLS MISSING IN OSX
+sudo softwareupdate -i "Command Line Tools (OS X Mavericks)-6.1"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install wget watch gnu-sed coreutils
 
@@ -99,6 +236,10 @@ brew cask install sublime-text
 #brew cask install textmate
 #brew cask install atom
 #brew cask install textwrangler 
+
+## PICK A MOCKUP APP
+brew cask install balsamiq
+#bre cask install pencil
 
 ## SYSTEM UTILITIES 
 brew cask install disk-inventory-x moom unetbootin istat-menus alfred caffeine keepassx rescuetime the-unarchiver logmein-client royal-tsx jdownloader lastfm 
@@ -149,3 +290,6 @@ echo About to close many apps - shutdown the following, or have them cycled for 
 echo Address Book, Calendar, Contacts, Dashboard, Dock, Finder, Mail, Safari, SystemUIServer, Terminal, iCal, iTunes
 ## CLOSE ALL APPS THAT NEED TO BE REFRESHED FOR SETTINGS TO TAKE
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "Terminal" "iCal" "iTunes"; do killall "$app" > /dev/null 2>&1 done
+
+## RUN A MACOS UPDATE
+sudo softwareupdate --install -all
