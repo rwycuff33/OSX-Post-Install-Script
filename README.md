@@ -92,6 +92,10 @@ Settings Changed
  - Set screen capture location to desktop PNGs
  - Turn off Fast User Switching
  - Turn off ambient light sensor
+ - Disable send and receive animations in Mail.app
+ - Mail.app copied email addresses set to plain "foo@bar.com"
+ - ⌘ + enter sends email in Mail.app
+ - 
 
 WORK ON THESE (NOT AUTOMATIC)
 =============================
