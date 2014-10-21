@@ -1,5 +1,11 @@
-## SET REASONABLE OSX DEFAULTS
+## Allow press and hold keys
 sudo defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+## SET HOSTNAME IN ALL THE RIGHT PLACES
+sudo scutil --set ComputerName "STRING"
+sudo scutil --set HostName "STRING"
+sudo scutil --set LocalHostName "STRING"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "STRING"
 
 ## TURN OFF SCREENSAVER PASSWORD DELAY
 defaults write com.apple.screensaver askForPassword -int 1
@@ -16,6 +22,10 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCorner
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+
+## SHOW PERCENTAGE IN BATTERY STATUS
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowTime -string "NO"
 
 ## DISABLE NATURAL SCROLLING
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -154,7 +164,7 @@ defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 ## REMOVE UN-NEEDED LINKS IN SAFARI
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
-## TURN ON BACKSPACE KEY TO GO BACK - COMMENTED OUT WITH PEOPLE WHO HATE THIS
+## TURN ON BACKSPACE KEY TO GO BACK - COMMENTED OUT FOR PEOPLE WHO HATE THIS
 #defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 ##DISABLE SAFARI’S THUMBNAIL CACHE FOR HISTORY AND TOP SITES
@@ -174,9 +184,16 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 #sudo pmset -a sms 0
 #sudo pmset -a standbydelay 86400
 
+## SORT ACTIVITY MONITOR RESULTS BY CPU USAGE
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-## SET SUPER FAST KEY REPEAT
+## SET SUPER FAST KEY REPEAT, SMALL DELAY
 defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+## EXPAND SAVE PANEL BY DEFAULT
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 ## TURN OFF ITUNES DEVICE BACKUP - USE ICLOUD BACKUPS INSTEAD
 defaults write com.apple.iTunes AutomaticDeviceBackupsDisabled -bool true
@@ -240,23 +257,19 @@ sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Aut
 # defaults write com.apple.iTunes show-store-link-arrows -bool false
 # Disable the Genius sidebar in iTunes
 # defaults write com.apple.iTunes disableGeniusSidebar -bool true
-# Disable the Ping sidebar in iTunes
-# defaults write com.apple.iTunes disablePingSidebar -bool true
-# Disable all the other Ping stuff in iTunes
-# defaults write com.apple.iTunes disablePing -bool true
 # Disable radio stations in iTunes
 # defaults write com.apple.iTunes disableRadio -bool true
 # Make ⌘ + F focus the search input in iTunes
 # defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add “Target Search Field” “@F”
 
 # Mail
-# Disable send and reply animations in Mail.app
-# defaults write com.apple.mail DisableReplyAnimations -bool true
-# defaults write com.apple.mail DisableSendAnimations -bool true
-# Copy email addresses as foo@example.com instead of Foo Bar <foo@example.com> in Mail.app
-# defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-# Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
-# defaults write com.apple.mail NSUserKeyEquivalents -dict-add “Send” “@U21a9”
+# DISABLE SEND AND REPLY ANIMATIONS IN MAIL.APP
+defaults write com.apple.mail DisableReplyAnimations -bool true
+defaults write com.apple.mail DisableSendAnimations -bool true
+# COPY EMAIL ADDRESSES AS FOO@EXAMPLE.COM INSTEAD OF FOO BAR <FOO@EXAMPLE.COM> IN MAIL.APP
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+# ADD THE KEYBOARD SHORTCUT ⌘ + ENTER TO SEND AN EMAIL IN MAIL.APP
+defaults write com.apple.mail NSUserKeyEquivalents -dict-add “Send” “@U21a9”
 
 # Terminal
 # Enable “focus follows mouse” for Terminal.app and all X11 apps i.e. hover over a window and start typing in it without clicking first
@@ -274,18 +287,23 @@ sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Aut
 # Enable Dashboard dev mode (allows keeping widgets on the desktop)
 # defaults write com.apple.dashboard devmode -bool true
 
+## Remove items from dock that you won't use
+##
+dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Adobe Photoshop CC 2014/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
+
+
 ## USE PLAIN TEXT MODE FOR NEW TEXTEDIT DOCUMENTS
 defaults write com.apple.TextEdit RichText -int 0
 
 # Open and save files as UTF–8 in TextEdit
-# defaults write com.apple.TextEdit PlainTextEncoding -int 4
-# defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
-# Enable the debug menu in Disk Utility
-# defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-# defaults write com.apple.DiskUtility advanced-image-options -bool true
+defaults write com.apple.TextEdit PlainTextEncoding -int 4
+defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+## Enable the debug menu in Disk Utility
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 ## INSTALL HOMEBREW AND COMMANDLINE TOOLS MISSING IN OSX
-sudo softwareupdate -i "Command Line Tools (OS X Mavericks)-6.1"
+xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install wget watch gnu-sed coreutils
 
@@ -301,13 +319,18 @@ brew cask install bee iterm2 sourcetree github chefdk
 
 ## PICK AN EDITOR
 brew cask install sublime-text
+defaults write com.apple.LaunchServices LSHandlers -array-add "{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.2;}"
+#defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+
 #brew cask install textmate
+#defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.macromates.textmate;}'
+
 #brew cask install atom
 #brew cask install textwrangler 
 
 ## PICK A MOCKUP APP
 brew cask install balsamiq
-#bre cask install pencil
+#brew cask install pencil
 
 ## SYSTEM UTILITIES 
 brew cask install disk-inventory-x moom unetbootin istat-menus alfred caffeine keepassx rescuetime the-unarchiver logmein-client royal-tsx jdownloader lastfm 
@@ -335,7 +358,7 @@ brew cask install navicat-for-postgresql toad
 ## INSTANT MESSAGING
 brew cask install adium colloquy slack
 
-## BACKUP APPS
+## INSTALL BACKUP APPS
 brew cask install backblaze carbon-copy-cloner
 
 ## BROWSER PLUGINS
