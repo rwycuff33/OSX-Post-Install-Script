@@ -1,3 +1,6 @@
+## THIS SCRIPT ASSUMES YOU'VE COPIED YOUR OLD PROFILE
+## AND LOADED IT ALREADY ON THE NEW SYSTEM
+
 ## Allow press and hold keys
 sudo defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
@@ -302,10 +305,10 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
 
-## INSTALL HOMEBREW AND COMMANDLINE TOOLS MISSING IN OSX
+## INSTALL HOMEBREW AND COMMANDLINE TOOLS MISSING IN OSX, ALONG WITH SOME PRETTINESS
 xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install wget watch gnu-sed coreutils
+brew install wget cmake watch gnu-sed coreutils psutils tmux tmux-mem-cpu-load git
 
 ## INSTALL OH MY ZSH AND SET ZSH AS DEFAULT SHELL
 sudo curl -L http://install.ohmyz.sh | sh
@@ -320,9 +323,20 @@ brew cask install bee iterm2 sourcetree github chefdk
 ## PICK AN EDITOR
 brew cask install sublime-text
 defaults write com.apple.LaunchServices LSHandlers -array-add "{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.2;}"
+## SUBLIME 3 VERSION
+#defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+
 ## GET A YOSEMITE ICON FOR SUBLIME
 wget -O /Applications/Sublime\ Text\ 2.app/Contents/Resources/Sublime\ Text\ 2.icns https://dribbble.com/shots/1678555-Sublime-Text-3-Replacement-Icon/attachments/265398
-#defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+
+## INSTALL SUBLIME PACKAGE MANAGEMENT
+wget https://sublime.wbond.net/Package%20Control.sublime-package
+mv Package\ Control.sublime-package ~/Library/Application\ Support/Sublime\ Text\ 2/Installed\ Packages/
+## SUBLIME 3 VERSION
+#mv Package\ Control.sublime-package ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/
+## GET YOUR HIPSTER ON!
+git clone https://github.com/phyllisstein/HipsterIpsum.git ~/Library/Application\ Support/Sublime\ Text\ 2/Installed\ Packages/Hipster\ Ipsum
+
 
 #brew cask install textmate
 #defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.macromates.textmate;}'
