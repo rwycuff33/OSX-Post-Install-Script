@@ -18,7 +18,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 defaults write com.apple.print.PrintingPrefs “Quit When Finished” -bool true
 
 ## DISABLE THE “ARE YOU SURE YOU WANT TO OPEN THIS APPLICATION?” DIALOG
-defaults write com.apple.LaunchServices LSQuarantine -bool false
+#defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 ## TRACKPAD: MAP BOTTOM RIGHT CORNER TO RIGHT-CLICK
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
@@ -99,7 +99,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # defaults write com.apple.dock launchanim -bool false
 
 # SPEED UP MISSION CONTROL ANIMATIONS
-# defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # DON’T GROUP WINDOWS BY APPLICATION IN MISSION CONTROL (I.E. USE THE OLD EXPOSÉ BEHAVIOR INSTEAD)
 # defaults write com.apple.dock expose-group-by-app -bool false
@@ -111,7 +111,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # defaults write com.apple.Dock autohide-delay -float 0
 
 # REMOVE THE ANIMATION WHEN HIDING/SHOWING THE DOCK
-# defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
 
 # ENABLE THE 2D DOCK
 # defaults write com.apple.dock no-glass -bool true
@@ -233,7 +233,7 @@ sudo systemsetup -setrestartfreeze on
 ## TURN OFF FAST USER SWITCHING
 sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool false
 
-## TURN OFF AMBIENT DISPLAY SENSOR
+## TURN OFF AMBIENT LIGHT SENSOR
 sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
 
 ## REST FROM WEB

@@ -6,7 +6,7 @@ The install.sh script will install the following:
  - Moom - http://manytricks.com/moom/
  - TextMate - http://macromates.com/download
  - Adobe Creative Cloud - http://www.adobe.com/appsmanager/
- - Alfred - http://www.alfredapp.com, https://itunes.apple.com/ca/app/alfred/id405843582?mt=12
+ - Alfred - http://www.alfredapp.com
  - iStat Menus - http://bjango.com/mac/istatmenus/
  - LastPass - https://lastpass.com/
  - LogMeIn Client - https://secure.logmein.com/
@@ -47,12 +47,11 @@ Commandline Apps
  - AWS CLI - http://aws.amazon.com/cli/
  - Docker - https://docs.docker.com/installation/mac/
  - Vagrant - https://www.vagrantup.com/downloads.html 
- - Homebrew - http://brew.sh - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
- - Oh My ZSH! - http://ohmyz.sh - curl -L http://install.ohmyz.sh | sh
- - OSX Developer Tools - https://developer.apple.com/downloads/index.action, then: sudo xcrun cc
+ - Homebrew - http://brew.sh 
+ - Oh My ZSH! - http://ohmyz.sh 
+ - OSX Developer Tools - https://developer.apple.com/downloads/index.action 
  - Git - http://git-scm.com/download/mac
  - Chef DK - https://downloads.getchef.com/chef-dk/mac/
- - wget - brew install wget
  - caskroom - http://caskroom.io (the real magic here)
   
 Settings Changed
@@ -61,8 +60,38 @@ Settings Changed
  - Animations turned off
  - Turned off fast user switching
  - Set default shell to zsh
- - Natural Mouse Scroll
+ - Natural mouse scroll turned off
  - Right click on trackpad
+ - Default Shell set to zsh
+ - Terminal.app set to Homebrew theme
+ - Hostname set everywhere
+ - Ability to press and hold keyboard keys turned back on
+ - Screensaver password prompt now pops up immediately
+ - Application run prompts disabled (commented out for security)
+ - Printer app now quits after print jobs
+ - Display battery percentage instead of time remaining
+ - Allow tab wherever possible
+ - Re-enabled zoom-scrolling (hold ctrl)
+ - Disabled auto-correct
+ - Force-enabled HiDPI display modes
+ - Set default finder view to "details"
+ - Grouped Expose apps once more
+ - Expose and Mission Control animations sped up
+ - Animations that can be turned off have been disabled
+ - Dashboard disabled
+ - Enabled display of volume icons on the desktop again
+ - Turned off smart-quotes (interferes with code snippets)
+ - Set default sorting of Activity Monitor to CPU usage
+ - Set system to restart on freeze/hang
+ - Unhide the ~/Library folder
+ - Set Safari homepage to blank
+ - Set keyboard repeat delay to the lowest value 
+ - Turn off iTunes device backup prompts
+ - Expand save panel by default
+ - Set Finder default to $HOME
+ - Set screen capture location to desktop PNGs
+ - Turn off Fast User Switching
+ - Turn off ambient light sensor
 
 WORK ON THESE (NOT AUTOMATIC)
 =============================
