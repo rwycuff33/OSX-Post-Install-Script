@@ -320,6 +320,8 @@ brew cask install bee iterm2 sourcetree github chefdk
 ## PICK AN EDITOR
 brew cask install sublime-text
 defaults write com.apple.LaunchServices LSHandlers -array-add "{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.2;}"
+## GET A YOSEMITE ICON FOR SUBLIME
+wget -O /Applications/Sublime\ Text\ 2.app/Contents/Resources/Sublime\ Text\ 2.icns https://dribbble.com/shots/1678555-Sublime-Text-3-Replacement-Icon/attachments/265398
 #defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
 #brew cask install textmate
