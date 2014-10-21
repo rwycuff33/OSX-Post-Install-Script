@@ -216,6 +216,74 @@ sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabl
 ## TURN OFF AMBIENT DISPLAY SENSOR
 sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
 
+## REST FROM WEB
+
+# Enable Safari’s debug menu
+# defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+# Make Safari’s search banners default to Contains instead of Starts With
+# defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+
+# Enable the Develop menu and the Web Inspector in Safari
+# defaults write com.apple.Safari IncludeDevelopMenu -bool true
+# defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+# Add a context menu item for showing the Web Inspector in web views
+# defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Enable the WebKit Developer Tools in the Mac App Store
+# defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+
+# iTunes
+# Disable the iTunes store link arrows
+# defaults write com.apple.iTunes show-store-link-arrows -bool false
+# Disable the Genius sidebar in iTunes
+# defaults write com.apple.iTunes disableGeniusSidebar -bool true
+# Disable the Ping sidebar in iTunes
+# defaults write com.apple.iTunes disablePingSidebar -bool true
+# Disable all the other Ping stuff in iTunes
+# defaults write com.apple.iTunes disablePing -bool true
+# Disable radio stations in iTunes
+# defaults write com.apple.iTunes disableRadio -bool true
+# Make ⌘ + F focus the search input in iTunes
+# defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add “Target Search Field” “@F”
+
+# Mail
+# Disable send and reply animations in Mail.app
+# defaults write com.apple.mail DisableReplyAnimations -bool true
+# defaults write com.apple.mail DisableSendAnimations -bool true
+# Copy email addresses as foo@example.com instead of Foo Bar <foo@example.com> in Mail.app
+# defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+# Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
+# defaults write com.apple.mail NSUserKeyEquivalents -dict-add “Send” “@U21a9”
+
+# Terminal
+# Enable “focus follows mouse” for Terminal.app and all X11 apps i.e. hover over a window and start typing in it without clicking first
+# defaults write com.apple.terminal FocusFollowsMouse -bool true
+# defaults write org.x.X11 wm_ffm -bool true
+
+# Time Machine
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+# defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Address Book, Dashboard, iCal, TextEdit, and Disk Utility
+# Enable the debug menu in Address Book
+# defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# Enable Dashboard dev mode (allows keeping widgets on the desktop)
+# defaults write com.apple.dashboard devmode -bool true
+
+## USE PLAIN TEXT MODE FOR NEW TEXTEDIT DOCUMENTS
+defaults write com.apple.TextEdit RichText -int 0
+
+# Open and save files as UTF–8 in TextEdit
+# defaults write com.apple.TextEdit PlainTextEncoding -int 4
+# defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+# Enable the debug menu in Disk Utility
+# defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+# defaults write com.apple.DiskUtility advanced-image-options -bool true
+
 ## INSTALL HOMEBREW AND COMMANDLINE TOOLS MISSING IN OSX
 sudo softwareupdate -i "Command Line Tools (OS X Mavericks)-6.1"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
