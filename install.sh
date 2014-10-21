@@ -301,6 +301,7 @@ brew cask install bee iterm2 sourcetree github chefdk
 
 ## PICK AN EDITOR
 brew cask install sublime-text
+defaults write com.apple.LaunchServices LSHandlers -array-add "{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.2;}"
 #brew cask install textmate
 #brew cask install atom
 #brew cask install textwrangler 
