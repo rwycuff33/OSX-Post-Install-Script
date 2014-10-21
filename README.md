@@ -81,7 +81,7 @@ Applications:
  - XCode - 
  - Capture One - 
  - VSCO presets - 
- - Adblock Plus for Safari - 
+ - Adblock Plus for Safari - https://adblockplus.org/category/adblock-plus-safari/
  - Pages - 
  - Amazon Workspaces Client - https://clients.amazonworkspaces.com/
  - Apple Jack - http://sourceforge.net/projects/applejack/
