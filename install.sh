@@ -28,10 +28,10 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryCli
 
 ## SHOW PERCENTAGE IN BATTERY STATUS
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-defaults write com.apple.menuextra.battery ShowTime -string "NO"
+defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 ## DISABLE NATURAL SCROLLING
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 
 ## ENABLE TAB IN MODAL DIALOGS
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -41,10 +41,10 @@ defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
 ## DISABLE AUTO-CORRECT
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+#defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ## ENABLE HIDPI DISPLAY MODES (REQUIRES RESTART)
-sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+#sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 ##FINDER: SHOW HIDDEN FILES BY DEFAULT
 #defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -146,10 +146,10 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 #defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ## SHOW ICONS FOR HARD DRIVES, SERVERS, AND REMOVABLE MEDIA ON THE DESKTOP
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+#defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+#defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+#defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+#defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 ## TURN OFF DISK IMAGE VERIFICATION - POSSIBLE SECURITY PROBLEM - UNCOMMENT IF YOU WANT THIS
 #defaults write com.apple.frameworks.diskimages skip-verify -bool true
@@ -158,14 +158,14 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 #defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 ## SET EXPOSE ANIMATION TO BE FASTEST AND GROUP BY APP
-defaults write com.apple.dock expose-animation-duration -float 0.1
-defaults write com.apple.dock "expose-group-by-app" -bool true
+#defaults write com.apple.dock expose-animation-duration -float 0.1
+#defaults write com.apple.dock "expose-group-by-app" -bool true
 
 ## TURN OF MATCHES ON PREFIX-ONLY IN SAFARI
-defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+#defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 ## REMOVE UN-NEEDED LINKS IN SAFARI
-defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+#defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 ## TURN ON BACKSPACE KEY TO GO BACK - COMMENTED OUT FOR PEOPLE WHO HATE THIS
 #defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
@@ -205,7 +205,7 @@ defaults write com.apple.iTunes AutomaticDeviceBackupsDisabled -bool true
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
 ## SET SAFARI HOMEPAGE TO BLANK
-defaults write com.apple.Safari HomePage -string "about:blank"
+#defaults write com.apple.Safari HomePage -string "about:blank"
 
 ## TURN OFF DASHBOARD
 defaults write com.apple.dashboard mcx-disabled -boolean YES
@@ -214,27 +214,27 @@ defaults write com.apple.dashboard mcx-disabled -boolean YES
 chflags nohidden ~/Library
 
 ## SET DEFAULT SEARCH TO CURRENT FOLDER
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+#defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 ## TURN OFF ANIMATIONS
-defaults write com.apple.finder DisableAllAnimations -bool true
+#defaults write com.apple.finder DisableAllAnimations -bool true
 
 ## SET REASONABLE SCREEN CAPTURE DEFAULTS
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
 defaults write com.apple.screencapture type -string "png"
 
 ## SET FINDER TO DEFAULT TO $HOME
-defaults write com.apple.finder NewWindowTarget -string "PfLo"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+#defaults write com.apple.finder NewWindowTarget -string "PfLo"
+#defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 ## RESTART SYSTEM WHEN FROZEN/HUNG
-sudo systemsetup -setrestartfreeze on
+#sudo systemsetup -setrestartfreeze on
 
 ## TURN OFF FAST USER SWITCHING
-sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool false
+#sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool false
 
 ## TURN OFF AMBIENT LIGHT SENSOR
-sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
+#sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
 
 ## REST FROM WEB
 
@@ -267,12 +267,12 @@ sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Aut
 
 # Mail
 # DISABLE SEND AND REPLY ANIMATIONS IN MAIL.APP
-defaults write com.apple.mail DisableReplyAnimations -bool true
-defaults write com.apple.mail DisableSendAnimations -bool true
+#defaults write com.apple.mail DisableReplyAnimations -bool true
+#defaults write com.apple.mail DisableSendAnimations -bool true
 # COPY EMAIL ADDRESSES AS FOO@EXAMPLE.COM INSTEAD OF FOO BAR <FOO@EXAMPLE.COM> IN MAIL.APP
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+#defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 # ADD THE KEYBOARD SHORTCUT ⌘ + ENTER TO SEND AN EMAIL IN MAIL.APP
-defaults write com.apple.mail NSUserKeyEquivalents -dict-add “Send” “@U21a9”
+#defaults write com.apple.mail NSUserKeyEquivalents -dict-add “Send” “@U21a9”
 
 # Terminal
 # Enable “focus follows mouse” for Terminal.app and all X11 apps i.e. hover over a window and start typing in it without clicking first
@@ -290,28 +290,12 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add “Send” “@U21a
 # Enable Dashboard dev mode (allows keeping widgets on the desktop)
 # defaults write com.apple.dashboard devmode -bool true
 
-## Remove items from dock that you won't use
-##
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Mail/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Contacts/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Calendar/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Reminders/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Maps/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Facetime/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/iTunes/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/iBooks/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-dloc=$(defaults read com.apple.dock persistent-apps | grep _CFURLString\" | awk '/Notes/ {print NR}') && /usr/libexec/PlistBuddy -c "Delete persistent-apps:$dloc" ~/Library/Preferences/com.apple.dock.plist && killall Dock
-
-
-## USE PLAIN TEXT MODE FOR NEW TEXTEDIT DOCUMENTS
-defaults write com.apple.TextEdit RichText -int 0
-
 # Open and save files as UTF–8 in TextEdit
-defaults write com.apple.TextEdit PlainTextEncoding -int 4
-defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+#defaults write com.apple.TextEdit PlainTextEncoding -int 4
+#defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 ## Enable the debug menu in Disk Utility
-defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-defaults write com.apple.DiskUtility advanced-image-options -bool true
+#defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+#defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 ## INSTALL HOMEBREW AND COMMANDLINE TOOLS MISSING IN OSX, ALONG WITH SOME PRETTINESS
 xcode-select --install
@@ -319,8 +303,8 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install wget cmake watch gnu-sed coreutils psutils tmux tmux-mem-cpu-load git
 
 ## INSTALL OH MY ZSH AND SET ZSH AS DEFAULT SHELL
-sudo curl -L http://install.ohmyz.sh | sh
-chsh -s /bin/zsh
+#sudo curl -L http://install.ohmyz.sh | sh
+#chsh -s /bin/zsh
 
 ## INSTALL CASKROOM AND ALL APPLICATIONS
 brew install caskroom/cask/brew-cask
@@ -329,42 +313,38 @@ brew install caskroom/cask/brew-cask
 brew cask install bee iterm2 sourcetree github chefdk
 
 ## PICK AN EDITOR
-brew cask install sublime-text
-defaults write com.apple.LaunchServices LSHandlers -array-add "{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.2;}"
+#brew cask install sublime-text
+#defaults write com.apple.LaunchServices LSHandlers -array-add "{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.2;}"
 ## SUBLIME 3 VERSION
 #defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
 ## GET A YOSEMITE ICON FOR SUBLIME
-wget -O /Applications/Sublime\ Text\ 2.app/Contents/Resources/Sublime\ Text\ 2.icns https://dribbble.com/shots/1678555-Sublime-Text-3-Replacement-Icon/attachments/265398
+#wget -O /Applications/Sublime\ Text\ 2.app/Contents/Resources/Sublime\ Text\ 2.icns https://dribbble.com/shots/1678555-Sublime-Text-3-Replacement-Icon/attachments/265398
 
 ## INSTALL SUBLIME PACKAGE MANAGEMENT
-wget https://sublime.wbond.net/Package%20Control.sublime-package
-mv Package\ Control.sublime-package ~/Library/Application\ Support/Sublime\ Text\ 2/Installed\ Packages/
+#wget https://sublime.wbond.net/Package%20Control.sublime-package
+#mv Package\ Control.sublime-package ~/Library/Application\ Support/Sublime\ Text\ 2/Installed\ Packages/
 ## SUBLIME 3 VERSION
 #mv Package\ Control.sublime-package ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/
 ## GET YOUR HIPSTER ON!
-git clone https://github.com/phyllisstein/HipsterIpsum.git ~/Library/Application\ Support/Sublime\ Text\ 2/Installed\ Packages/Hipster\ Ipsum
+#git clone https://github.com/phyllisstein/HipsterIpsum.git ~/Library/Application\ Support/Sublime\ Text\ 2/Installed\ Packages/Hipster\ Ipsum
 
 
 #brew cask install textmate
 #defaults write com.apple.LaunchServices LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.macromates.textmate;}'
 
-#brew cask install atom
-#brew cask install textwrangler 
+brew cask install atom
+brew cask install textwrangler 
 
 ## PICK A MOCKUP APP
-brew cask install balsamiq
+#brew cask install balsamiq
 #brew cask install pencil
 
 ## SYSTEM UTILITIES 
-brew cask install disk-inventory-x moom unetbootin istat-menus alfred caffeine keepassx rescuetime the-unarchiver logmein-client royal-tsx jdownloader lastfm 
+brew cask install unetbootin caffeine rescuetime the-unarchiver royal-tsx 
 
 ## VIRTUALIZATION / CONTAINERS
-brew cask install boot2docker vagrant vmware-fusion virtualbox
-
-## GRAPHICS APPS
-## Set "wacom-tablet" to "wacom-bamboo-tablet" for bamboo users
-brew cask install google-nik-collection wacom-tablet adobe-creative-cloud 
+brew cask install boot2docker vagrant virtualbox
 
 ## BROWSERS - UNCOMMENT YOUR FAVOURITE AND/OR INSTALL THEM ALL #################################################
 ## INSTALL CHROME, REMOTE DESKTOP, CHROMECAST AND TURN OFF ANNOYING SWIPE LEFT RIGHT BEHAVIOUR
@@ -378,26 +358,26 @@ brew cask install chromecast chrome-remote-desktop-host google-chrome && default
 ###############################################################################################################
 
 ## INSTALL DB TOOLS
-brew cask install navicat-for-postgresql toad
+#brew cask install navicat-for-postgresql toad
 ## INSTANT MESSAGING
-brew cask install adium colloquy slack
+brew cask install colloquy
 
 ## INSTALL BACKUP APPS
-brew cask install backblaze carbon-copy-cloner
+#brew cask install backblaze carbon-copy-cloner
 
 ## BROWSER PLUGINS
-brew cask install lastpass-universal silverlight flash-player
+brew cask install silverlight flash-player
 
 ## SPOTIFY
 brew cask install spotify spotify-menubar spotify-notifications
 
 ## CONFIGURE ITERM TO NOT PROMPT ON QUIT
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+#defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ## INSTALL AWS CLI
-wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
-sudo pip install awscli
+#wget https://bootstrap.pypa.io/get-pip.py
+#sudo python get-pip.py
+#sudo pip install awscli
 
 ## WARN USER
 sleep 30
@@ -407,7 +387,7 @@ echo Address Book, Calendar, Contacts, Dashboard, Dock, Finder, Mail, Safari, Sy
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer" "Terminal" "iCal" "iTunes"; do killall "$app" > /dev/null 2>&1 done
 
 ## ADD CYBERDOCK TO DOCK
-defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Cyberduck.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+#defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Cyberduck.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 
 ## ADD SPOTIFY TO DOCK
 defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Spotify.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
